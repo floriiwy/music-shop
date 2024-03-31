@@ -148,7 +148,29 @@ function applySearch() {
 
 searchButton.addEventListener("click", applySearch);
 searchInput.addEventListener("search", applySearch);
+
 const sortControl = document.querySelector("#sort");
 
+sortControl.addEventListener("change", (event) => {
 
-renderItems(currentState);
+    const selectedOption = event.target.value;
+
+    switch (selectedOption) {
+        case "expensive":
+            {
+                currentState.sort((a, b) => b.price - a.price);
+                break;
+            }
+        case "cheap":
+            {
+                currentState.sort((a, b) => a.price - b.price);
+                break;
+            }
+        case "alphabet":
+            {
+                currentState.sort((a, b) => sortByAlphabet(a, b));
+                break;
+            }
+    }
+    renderItems(currentState);
+});

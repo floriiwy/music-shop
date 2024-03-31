@@ -68,6 +68,10 @@ footer a:hover {
     position: relative;
 }
 
+.filters {
+    margin-bottom: 10px;
+}
+
 .site-search {
     display: flex;
 }
