@@ -143,6 +143,7 @@ function applySearch() {
         el.title.toLowerCase().includes(searchString)
     );
     renderItems(currentState.sort((a, b) => sortByAlphabet(a, b)));
+    sortControl.selectedIndex = 0;
 }
 
 
